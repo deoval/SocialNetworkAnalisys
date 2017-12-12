@@ -86,6 +86,9 @@ with open(nome_ficheiro, 'rb') as ficheiro:
 print faults;
 print points;
 
-scatter_plot = plt.scatter(points, faults, alpha=0.5)
+for EI in G1.Nodes():
+	print "out (%d)" % (EI.GetOutDeg())
+
+scatter_plot = plt.scatter(points, faults, alpha=0.5, c=faults)
 plt.show()
 # writeTeamNodesCSV(teams, nome_ficheiro, points)
